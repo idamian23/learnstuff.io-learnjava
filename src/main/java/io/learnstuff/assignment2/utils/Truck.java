@@ -1,17 +1,19 @@
 package io.learnstuff.assignment2.utils;
 
-public class Truck extends Vehicle{
-    private int maxTransportCapacity;
+public final class Truck extends Vehicle implements VehicleInterface{
 
     public Truck(String model, int year, int numWheels, int maxSpeed,int maxTransportCapacity, String plateNumber) {
-        super(model, year, numWheels, maxSpeed, plateNumber);
+        super(model, year, numWheels, maxSpeed, maxTransportCapacity, plateNumber);
     }
 
-    public int getMaxTransportCapacity() {
-        return maxTransportCapacity;
+
+    @Override
+    public void start() {
+        System.out.println("The TRUCK is starting now!");
     }
 
-    public void setMaxTransportCapacity(int maxTransportCapacity) {
-        this.maxTransportCapacity = maxTransportCapacity;
+    @Override
+    public void stop() {
+        System.out.println("Stopping the TRUCK now!");
     }
 }
