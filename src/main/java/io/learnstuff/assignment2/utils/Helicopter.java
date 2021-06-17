@@ -1,6 +1,6 @@
 package io.learnstuff.assignment2.utils;
 
-public class Helicopter extends Vehicle{
+public final class Helicopter extends Vehicle implements FlyingInterface{
     private int maxAltitude;
 
     public Helicopter(String model, int year,int maxAltitude, int maxFlyingSpeed )
@@ -14,5 +14,10 @@ public class Helicopter extends Vehicle{
 
     public void setMaxAltitude(int maxAltitude) {
         this.maxAltitude = maxAltitude;
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("Helicopter has been set for flying... ");
     }
 }
