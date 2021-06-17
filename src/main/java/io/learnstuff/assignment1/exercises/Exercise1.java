@@ -1,6 +1,6 @@
-package assignment1.exercises;
+package io.learnstuff.assignment1.exercises;
 
-import assignment1.utils.Counter;
+import io.learnstuff.assignment1.utils.Counter;
 
 
 public class Exercise1 {
