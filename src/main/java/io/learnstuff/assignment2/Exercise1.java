@@ -1,9 +1,6 @@
 package io.learnstuff.assignment2;
 
-import io.learnstuff.assignment2.utils.Automobile;
-import io.learnstuff.assignment2.utils.Helicopter;
-import io.learnstuff.assignment2.utils.Truck;
-import io.learnstuff.assignment2.utils.Vehicle;
+import io.learnstuff.assignment2.utils.*;
 
 /*****************************
  Write classes that describe types of vehicles, starting from a base class and extending it
@@ -16,11 +13,21 @@ import io.learnstuff.assignment2.utils.Vehicle;
  ******************************/
 
 public class Exercise1 {
+    public static void main(String ...arg) {
+        Vehicle vehicle = new Vehicle("M", 2000, 4, 200, "NT-12-TRA");
+        Automobile automobile = new Automobile("BMW", 1980, 4, 180, "B-222-MMM");
+        Helicopter helicopter = new Helicopter("Tiger", 2010, 10000, 120);
+        Truck truck = new Truck("Volvo", 2020, 6, 90, 800, "B-89-LUO");
+        FlyingAutomobile flyingAutomobile = new FlyingAutomobile("NewModel",2021,6, 200,"B-222-OZN",10000);
 
-    Vehicle vehicle = new Vehicle("M",2000,4,200,"NT-12-TRA");
-    Automobile automobile = new Automobile("BMW",1980,4,180,"B-222-MMM");
-    Helicopter helicopter = new Helicopter("Tiger",2010,10000,120);
-    Truck truck = new Truck("Volvo",2020,6,90,80,"B-89-LUO");
+        System.out.println(truck.getMaxTransportCapacity());
 
-
+        vehicle.start();
+        automobile.start();
+        truck.stop();
+        helicopter.fly();
+        flyingAutomobile.start();
+        flyingAutomobile.fly();
+        flyingAutomobile.stop();
+    }
 }
