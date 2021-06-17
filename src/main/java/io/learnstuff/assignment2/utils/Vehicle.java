@@ -1,7 +1,8 @@
 package io.learnstuff.assignment2.utils;
 
 
-public class Vehicle {
+public class Vehicle implements VehicleInterface {
+
     private String model;
     private int year;
     private int numWheels;
@@ -9,8 +10,17 @@ public class Vehicle {
     private int maxFlyingSpeed;
     private int mileage;
     private String plateNumber;
+    private int maxTransportCapacity;
 
-    // Automobiles
+    public int getMaxTransportCapacity() {
+        return maxTransportCapacity;
+    }
+
+    public void setMaxTransportCapacity(int maxTransportCapacity) {
+        this.maxTransportCapacity = maxTransportCapacity;
+    }
+
+    // Constructor for Automobiles
     public Vehicle(String model, int year, int numWheels, int maxSpeed, String plateNumber) {
         this.model = model;
         this.year = year;
@@ -18,7 +28,27 @@ public class Vehicle {
         this.maxSpeed = maxSpeed;
         this.plateNumber = plateNumber;
     }
-    //Flying Vehicles
+    public Vehicle(String model, int year, int numWheels, int maxSpeed, String plateNumber, int maxFlyingSpeed) {
+        this.model = model;
+        this.year = year;
+        this.numWheels = numWheels;
+        this.maxSpeed = maxSpeed;
+        this.plateNumber = plateNumber;
+        this.maxFlyingSpeed = maxFlyingSpeed;
+    }
+
+    // TRUCK
+    public Vehicle(String model, int year, int numWheels, int maxSpeed,int maxTransportCapacity, String plateNumber){
+        this.model = model;
+        this.year = year;
+        this.numWheels = numWheels;
+        this.maxSpeed = maxSpeed;
+        this.plateNumber = plateNumber;
+        this.maxTransportCapacity = maxTransportCapacity;
+    }
+
+
+    //Constructor for Flying Vehicles
     public Vehicle(String model, int year, int numWheels, int maxFlyingSpeed) {
         this.model = model;
         this.year = year;
@@ -88,5 +118,15 @@ public class Vehicle {
     public String toString(){
         String str = this.model + "-" + this.plateNumber;
         return str;
+    }
+
+    @Override
+    public void start() {
+        System.out.println("Starting the engine...");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Stopping the engine...");
     }
 }
