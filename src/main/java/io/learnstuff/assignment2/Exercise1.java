@@ -1,6 +1,6 @@
 package io.learnstuff.assignment2;
 
-import io.learnstuff.assignment2.utils.*;
+import io.learnstuff.assignment2.exercise1utils.*;
 
 /*****************************
  Write classes that describe types of vehicles, starting from a base class and extending it
